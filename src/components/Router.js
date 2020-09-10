@@ -10,10 +10,10 @@ import Home from "routes/Home";
 import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
 
-const AppRouter = ({ userObj }) => {
+const AppRouter = ({ refreshUser, userObj }) => {
   return (
     <Router>
-      {userObj && <Navigation />}
+      {userObj && <Navigation userObj={userObj} />}
       <Switch>
         {userObj ? (
           <>
@@ -21,7 +21,7 @@ const AppRouter = ({ userObj }) => {
               <Home userObj={userObj} />
             </Route>
             <Route exact path="/profile">
-              <Profile />
+              <Profile userObj={userObj} refreshUser={refreshUser} />
             </Route>
             <Redirect from="*" to="/" />
           </>

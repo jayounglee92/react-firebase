@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { dbService } from "fbase";
+import { dbService, storageService } from "fbase";
 
 const Career = ({ careerObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -11,6 +11,7 @@ const Career = ({ careerObj, isOwner }) => {
       //삭제
       console.log("삭제!");
       await dbService.doc(`career/${careerObj.id}`).delete();
+      await storageService.refFromURL(careerObj.attachmentUrl).delete();
     } else {
       // 안삭제
       console.log("안삭제!");
@@ -55,6 +56,9 @@ const Career = ({ careerObj, isOwner }) => {
       ) : (
         <>
           <h4>{careerObj.title}</h4>
+          {careerObj.attachmentUrl && (
+            <img src={careerObj.attachmentUrl} width="200px" height="100px" />
+          )}
           {isOwner && (
             <>
               <button onClick={onDeleteClick}>Delete</button>
