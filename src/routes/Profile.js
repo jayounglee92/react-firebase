@@ -11,7 +11,7 @@ export default ({ userObj, refreshUser }) => {
     history.push("/");
   };
   const getMyCareer = async () => {
-    const careers = await dbService
+    await dbService
       .collection("career")
       .where("creatorId", "==", userObj.uid)
       .orderBy("createdAt")

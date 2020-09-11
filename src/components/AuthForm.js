@@ -23,21 +23,14 @@ const AuthForm = () => {
     // prevent refresh
     event.preventDefault();
     try {
-      let data;
+      //let data;
       if (newAccount) {
         // create account
-        const data = await authService.createUserWithEmailAndPassword(
-          email,
-          password
-        );
+        await authService.createUserWithEmailAndPassword(email, password);
       } else {
         // log in
-        const data = await authService.signInWithEmailAndPassword(
-          email,
-          password
-        );
+        await authService.signInWithEmailAndPassword(email, password);
       }
-      console.log(data);
     } catch (error) {
       setError(error.message);
     }
