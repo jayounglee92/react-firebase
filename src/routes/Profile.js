@@ -16,11 +16,13 @@ export default ({ userObj, refreshUser }) => {
       .where("creatorId", "==", userObj.uid)
       .orderBy("createdAt")
       .get();
-    console.log(careers.docs.map((doc) => doc.data()));
+    //console.log(careers.docs.map((doc) => doc.data()));
   };
+
   useEffect(() => {
     getMyCareer();
-  }, []);
+  });
+
   const onChange = (event) => {
     const {
       target: { value },
