@@ -1,4 +1,4 @@
-# 🤓 Simple Board width firebase
+# 🤓 (Templete) Simple Board with firebase
 
 > trying to develop a simple board with react and firebase without back-end processing
 
@@ -6,14 +6,13 @@
 
 - Skill : Javascript, React JS, React Hooks, firebase(auth, store)
 - Tool : VSCode
-- Period :ing
+- Period : 1 week
+- **NOT PUBLISHED**
 
 ## Contents
 
-### Screens
-
-- [x] Home
-- [x] Profile
-- [ ] Career
-- [ ] Event
-- [ ] Detail
+- [x] Menu(Router)
+- [x] Login/Logout with Google/GitHub
+- [x] Edit Profile
+- [x] Write/Edit/Delete Content
+- [x] Upload Image
